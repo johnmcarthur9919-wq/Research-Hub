@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI System Prompt Research</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        .nav-active { border-bottom: 2px solid #2563eb; color: #2563eb; font-weight: 600; }
+        .tab-content { display: none; }
+        .tab-content.active { display: block; }
+    </style>
+</head>
+<body class="bg-gray-50 text-gray-800 font-sans antialiased flex flex-col min-h-screen">
+
+    <!-- Header & Navigation -->
+    <header class="bg-white shadow-sm sticky top-0 z-10">
+        <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col sm:flex-row justify-between items-start sm:items-center py-4">
+            <div class="font-bold text-xl text-gray-900 tracking-tight mb-3 sm:mb-0">Prompt<span class="text-blue-600">Research</span></div>
+            <nav class="flex space-x-6 overflow-x-auto w-full sm:w-auto text-sm">
+                <a href="#home" class="nav-link nav-active pb-1 whitespace-nowrap" data-target="home">Overview</a>
+                <a href="#providers" class="nav-link text-gray-500 hover:text-gray-900 pb-1 whitespace-nowrap" data-target="providers">Providers & Platforms</a>
+                <a href="#contribute" class="nav-link text-gray-500 hover:text-gray-900 pb-1 whitespace-nowrap" data-target="contribute">Contribute</a>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Main Content Area -->
+    <main class="flex-grow max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 py-8 w-full">
+        
+        <!-- Overview Section -->
+        <section id="home" class="tab-content active">
+            <div class="max-w-3xl">
+                <h1 class="text-3xl font-bold mb-4 text-gray-900">Uncovering the Instructions Behind AI</h1>
+                <p class="text-lg text-gray-700 mb-6 leading-relaxed">
+                    Welcome to the AI System Prompt Research Hub. This documentation site exists to collect, analyze, and archive the foundational "system prompts" that guide large language models and agentic platforms.
+                </p>
+                <h2 class="text-xl font-semibold mb-3 text-gray-900">Why this exists</h2>
+                <p class="text-gray-700 mb-6 leading-relaxed">
+                    System prompts dictate AI behavior, safety guardrails, and baseline personas. By documenting these instructions in an open, searchable hub, researchers and developers can better understand how different providers shape their models' reasoning and boundaries.
+                </p>
+                <button onclick="document.querySelector('[data-target=\\'providers\\']').click()" class="bg-blue-600 text-white px-5 py-2 rounded hover:bg-blue-700 transition font-medium">
+                    Browse the Archive
+                </button>
+            </div>
+        </section>
+
+        <!-- Providers Section -->
+        <section id="providers" class="tab-content">
+            <div class="flex justify-between items-end mb-6">
+                <h1 class="text-2xl font-bold text-gray-900">Prompt Archive</h1>
+            </div>
+            
+            <div class="space-y-6">
+                <!-- Entry 1 -->
+                <div class="bg-white border border-gray-200 rounded-lg p-5 shadow-sm">
+                    <div class="flex justify-between items-start mb-4">
+                        <div>
+                            <span class="inline-block px-2 py-1 bg-gray-100 text-gray-700 text-xs font-semibold rounded mr-2 mb-2 sm:mb-0">Provider A</span>
+                            <h3 class="text-lg font-bold inline-block text-gray-900">Model XYZ <span class="text-gray-500 text-sm font-normal">(v2024.1)</span></h3>
+                        </div>
+                        <span class="px-2 py-1 text-xs font-semibold rounded bg-green-100 text-green-800 whitespace-nowrap">
+                            Verified
+                        </span>
+                    </div>
+                    
+                    <div class="grid grid-cols-1 sm:grid-cols-3 gap-3 text-sm text-gray-600 mb-4 bg-gray-50 p-3 rounded border border-gray-100">
+                        <div><strong class="text-gray-800">Date:</strong> Oct 15, 2026</div>
+                        <div><strong class="text-gray-800">Source:</strong> API Documentation</div>
+                        <div><strong class="text-gray-800">Context:</strong> Default web chat</div>
+                    </div>
+                    
+                    <div class="bg-gray-900 p-4 rounded text-sm font-mono text-gray-300 mb-4 whitespace-pre-wrap">You are a helpful and harmless AI assistant. Your primary goal is to provide accurate information without expressing personal opinions. You do not have access to the internet.</div>
+                    
+                    <p class="text-sm text-gray-600"><strong class="text-gray-800">Notes:</strong> This is the baseline prompt used before custom instructions are appended. Verified via official developer portal.</p>
+                </div>
+
+                <!-- Entry 2 -->
+                <div class="bg-white border border-gray-200 rounded-lg p-5 shadow-sm">
+                    <div class="flex justify-between items-start mb-4">
+                        <div>
+                            <span class="inline-block px-2 py-1 bg-gray-100 text-gray-700 text-xs font-semibold rounded mr-2 mb-2 sm:mb-0">Platform B</span>
+                            <h3 class="text-lg font-bold inline-block text-gray-900">Agentic Platform <span class="text-gray-500 text-sm font-normal">(Beta)</span></h3>
+                        </div>
+                        <span class="px-2 py-1 text-xs font-semibold rounded bg-yellow-100 text-yellow-800 whitespace-nowrap">
+                            Observational
+                        </span>
+                    </div>
+                    
+                    <div class="grid grid-cols-1 sm:grid-cols-3 gap-3 text-sm text-gray-600 mb-4 bg-gray-50 p-3 rounded border border-gray-100">
+                        <div><strong class="text-gray-800">Date:</strong> Nov 01, 2026</div>
+                        <div><strong class="text-gray-800">Source:</strong> Red-teaming extraction</div>
+                        <div><strong class="text-gray-800">Context:</strong> Code generation copilot</div>
+                    </div>
+                    
+                    <div class="bg-gray-900 p-4 rounded text-sm font-mono text-gray-300 mb-4 whitespace-pre-wrap">You are an expert software engineer. Always wrap your code in standard markdown formatting. Before writing code, you must explain your logic in exactly 3 bullet points.</div>
+                    
+                    <p class="text-sm text-gray-600"><strong class="text-gray-800">Notes:</strong> Extracted using a translation-based jailbreak. May not represent the entire system prompt block.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Contribute Section -->
+        <section id="contribute" class="tab-content">
+            <div class="max-w-2xl">
+                <h1 class="text-2xl font-bold mb-4 text-gray-900">Contribute to the Archive</h1>
+                <p class="text-gray-700 mb-6">
+                    This is a community-driven research hub. When submitting a newly discovered or updated system prompt, please format your submission using the exact fields below.
+                </p>
+                
+                <div class="bg-white border border-gray-200 rounded-lg p-6 shadow-sm">
+                    <h2 class="text-lg font-semibold mb-4 border-b pb-2 text-gray-900">Required Submission Fields</h2>
+                    <ul class="space-y-3 text-sm text-gray-700 list-none">
+                        <li><strong class="text-gray-900 inline-block w-32">Provider:</strong> Name of the company or open-source org.</li>
+                        <li><strong class="text-gray-900 inline-block w-32">Model:</strong> Exact model name (e.g., v3.5, Opus, Pro).</li>
+                        <li><strong class="text-gray-900 inline-block w-32">Version/Date:</strong> When the prompt was active.</li>
+                        <li><strong class="text-gray-900 inline-block w-32">Verification:</strong> State if it is <em>Verified</em> (from official docs/APIs) or <em>Observational</em> (extracted via jailbreaks).</li>
+                        <li><strong class="text-gray-900 inline-block w-32">Source:</strong> Where or how this was discovered.</li>
+                        <li><strong class="text-gray-900 inline-block w-32">Context:</strong> The specific interface or tool it applies to.</li>
+                        <li><strong class="text-gray-900 inline-block w-32">Prompt Text:</strong> The raw text of the instructions.</li>
+                        <li><strong class="text-gray-900 inline-block w-32">Notes:</strong> Any anomalies or behavioral context.</li>
+                    </ul>
+                    
+                    <div class="mt-6 pt-4 border-t border-gray-100">
+                        <p class="text-sm text-gray-500 italic">To submit, please open a Pull Request on our GitHub repository with a new entry formatted using the JSON/HTML structure above.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <footer class="bg-white border-t border-gray-200 mt-auto py-6 text-center text-gray-500 text-sm">
+        <p>&copy; 2026 AI System Prompt Research Project. A public documentation hub.</p>
+    </footer>
+
+    <!-- Simple JavaScript for Navigation -->
+    <script>
+        document.querySelectorAll('.nav-link').forEach(link => {
+            link.addEventListener('click', function(e) {
+                e.preventDefault();
+                
+                // Remove active states
+                document.querySelectorAll('.nav-link').forEach(l => {
+                    l.classList.remove('nav-active', 'text-blue-600');
+                    l.classList.add('text-gray-500');
+                });
+                document.querySelectorAll('.tab-content').forEach(c => c.classList.remove('active'));
+                
+                // Add active state to clicked
+                this.classList.add('nav-active', 'text-blue-600');
+                this.classList.remove('text-gray-500');
+                
+                // Show target section
+                const targetId = this.getAttribute('data-target');
+                document.getElementById(targetId).classList.add('active');
+            });
+        });
+    </script>
+</body>
+</html>
